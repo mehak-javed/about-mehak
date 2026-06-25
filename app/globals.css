@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+/* ---- Dark, minimal theme (Arik-inspired) ---- */
+:root {
+  --background: #0a0a0a;
+  --surface: #111111;
+  --surface-elevated: #161616;
+  --foreground: #ededed;
+  --muted-foreground: #8a8a8a;
+  --border: #232323;
+  --accent: #ededed;
+  --heading: #dac5a7; /* warm cream — used for main headings */
+  --radius: 1rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-heading: var(--heading);
+  --radius-card: var(--radius);
+}
+
+/* Main headings use the warm cream accent */
+.text-heading {
+  color: var(--heading);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* offset for the sticky navbar */
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Subtle radial glow used behind the hero */
+.hero-glow {
+  background:
+    radial-gradient(60% 50% at 50% 0%, rgba(255, 255, 255, 0.06), transparent 70%),
+    radial-gradient(40% 40% at 80% 20%, rgba(120, 120, 255, 0.05), transparent 70%);
+}
+
+/* Thin section index number, Arik style */
+.section-index {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.15);
+}
